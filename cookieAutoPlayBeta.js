@@ -458,6 +458,7 @@ AutoPlay.bestBuy = function() {
     if (AutoPlay.checkDragon(b) && check_obj[b].pp < 1)
       if (AutoPlay.buyBuilding(Game.Objects[b], buy_amt, buy_amt)) haveBought=true;
     if (check_obj[b].pp < minpp && AutoPlay.checkDragon(b)) {
+      console.log("[CookieBot] Current minimum pp pick is "+b+" with "+check_obj[b].pp+"pp")
       minpp = check_obj[b].pp;
       best = b;
       type = 'building';
@@ -474,6 +475,7 @@ AutoPlay.bestBuy = function() {
         if (CookieMonsterData.Upgrades[u.name].pp < 1)
           if (AutoPlay.buyUpgrade(u)) haveBought=true;
         else if (CookieMonsterData.Upgrades[u.name].pp < minpp) {
+	  console.log("[CookieBot] Current minimum pp pick is "+b+" with "+check_obj[b].pp+"pp")
           minpp = CookieMonsterData.Upgrades[u.name].pp;
           best = u.name;
           type = 'upgrade';
